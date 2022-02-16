@@ -1,3 +1,10 @@
+import { LogoIcon } from '@assets/icons';
+
 export function App() {
-  return <h1>Hello world</h1>;
+  return (
+    <>
+      <LogoIcon />
+      <h1>DT Money</h1>
+    </>
+  );
 }
