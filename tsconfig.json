@@ -9,6 +9,7 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
+    "types": ["@honkhonk/vite-plugin-svgr/client"],
     "module": "ESNext",
     "moduleResolution": "Node",
     "resolveJsonModule": true,
@@ -23,7 +24,7 @@
       "@pages/*": ["src/pages/*"],
       "@styles/*": ["src/styles/*"],
       "@hooks/*": ["src/hooks/*"],
-    }
+    },
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
