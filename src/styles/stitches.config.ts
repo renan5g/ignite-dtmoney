@@ -4,6 +4,8 @@ export type { VariantProps } from '@stitches/react';
 
 import { rem } from '@shared/css';
 
+type SpaceValue<T> = number | Stitches.ScaleValue<'space'> | T;
+
 export const {
   styled,
   css,
@@ -19,9 +21,13 @@ export const {
       blue: 'hsl(256, 67%, 48%)',
       green: 'hsl(158, 60%, 50%)',
       red: 'hsl(350, 78%, 54%)',
-      shapes: 'hsl(0, 0%, 100%)',
-      heading: 'hsl(227, 28%, 29%)',
-      text: 'hsl(227, 15%, 64%)',
+
+      blue_ligth: 'hsl(256, 100%, 60%)',
+
+      text_body: 'hsl(227, 15%, 64%)',
+      text_title: 'hsl(227, 28%, 29%)',
+
+      shape: 'hsl(0, 0%, 100%)',
       background: 'hsl(216, 20%, 95%)',
     },
     fonts: {
@@ -93,134 +99,72 @@ export const {
     },
   },
   media: {
-    sm: '(min-width: 375px)',
-    md: '(min-width: 768px)',
-    lg: '(min-width: 1024px)',
-    xl: '(min-width: 1440px)',
+    sm: '(max-width: 375px)',
+    md: '(max-width: 768px)',
+    lg: '(max-width: 1024px)',
+    xl: '(max-width: 1440px)',
     motion: '(prefers-reduced-motion)',
     hover: '(any-hover: hover)',
     dark: '(prefers-color-scheme: dark)',
     light: '(prefers-color-scheme: light)',
   },
   utils: {
-    p: (
-      value:
-        | Stitches.ScaleValue<'space'>
-        | Stitches.PropertyValue<'padding'>
-        | number
-    ) => ({
+    p: (value: SpaceValue<Stitches.PropertyValue<'padding'>>) => ({
       paddingTop: value,
       paddingBottom: value,
       paddingLeft: value,
       paddingRight: value,
     }),
-    pt: (
-      value:
-        | Stitches.ScaleValue<'space'>
-        | Stitches.PropertyValue<'paddingTop'>
-        | number
-    ) => ({
+    pt: (value: SpaceValue<Stitches.PropertyValue<'paddingTop'>>) => ({
       paddingTop: value,
     }),
-    pr: (
-      value:
-        | Stitches.ScaleValue<'space'>
-        | Stitches.PropertyValue<'paddingRight'>
-        | number
-    ) => ({
+    pr: (value: SpaceValue<Stitches.PropertyValue<'paddingRight'>>) => ({
       paddingRight: value,
     }),
-    pb: (
-      value:
-        | Stitches.ScaleValue<'space'>
-        | Stitches.PropertyValue<'paddingBottom'>
-        | number
-    ) => ({
+    pb: (value: SpaceValue<Stitches.PropertyValue<'paddingRight'>>) => ({
       paddingBottom: value,
     }),
-    pl: (
-      value:
-        | Stitches.ScaleValue<'space'>
-        | Stitches.PropertyValue<'paddingLeft'>
-        | number
-    ) => ({
+    pl: (value: SpaceValue<Stitches.PropertyValue<'paddingLeft'>>) => ({
       paddingLeft: value,
     }),
     px: (
-      value:
-        | Stitches.ScaleValue<'space'>
-        | Stitches.PropertyValue<'paddingLeft' & 'paddingRight'>
-        | number
+      value: SpaceValue<Stitches.PropertyValue<'paddingLeft' & 'paddingRight'>>
     ) => ({
       paddingLeft: value,
       paddingRight: value,
     }),
     py: (
-      value:
-        | Stitches.ScaleValue<'space'>
-        | Stitches.PropertyValue<'paddingTop' & 'paddingBottom'>
-        | number
+      value: SpaceValue<Stitches.PropertyValue<'paddingTop' & 'paddingBottom'>>
     ) => ({
       paddingTop: value,
       paddingBottom: value,
     }),
-    m: (
-      value:
-        | Stitches.ScaleValue<'space'>
-        | Stitches.PropertyValue<'margin'>
-        | number
-    ) => ({
+    m: (value: SpaceValue<Stitches.PropertyValue<'margin'>>) => ({
       marginTop: value,
       marginBottom: value,
       marginLeft: value,
       marginRight: value,
     }),
-    mt: (
-      value:
-        | Stitches.ScaleValue<'space'>
-        | Stitches.PropertyValue<'marginTop'>
-        | number
-    ) => ({
+    mt: (value: SpaceValue<Stitches.PropertyValue<'marginTop'>>) => ({
       marginTop: value,
     }),
-    mr: (
-      value:
-        | Stitches.ScaleValue<'space'>
-        | Stitches.PropertyValue<'marginRight'>
-        | number
-    ) => ({
+    mr: (value: SpaceValue<Stitches.PropertyValue<'marginRight'>>) => ({
       marginRight: value,
     }),
-    mb: (
-      value:
-        | Stitches.ScaleValue<'space'>
-        | Stitches.PropertyValue<'marginBottom'>
-        | number
-    ) => ({
+    mb: (value: SpaceValue<Stitches.PropertyValue<'marginBottom'>>) => ({
       marginBottom: value,
     }),
-    ml: (
-      value:
-        | Stitches.ScaleValue<'space'>
-        | Stitches.PropertyValue<'marginLeft'>
-        | number
-    ) => ({
+    ml: (value: SpaceValue<Stitches.PropertyValue<'marginLeft'>>) => ({
       marginLeft: value,
     }),
     mx: (
-      value:
-        | Stitches.ScaleValue<'space'>
-        | Stitches.PropertyValue<'marginLeft' & 'marginRight'>
-        | number
+      value: SpaceValue<Stitches.PropertyValue<'marginLeft' & 'marginRight'>>
     ) => ({
       marginLeft: value,
       marginRight: value,
     }),
     my: (
-      value:
-        | Stitches.ScaleValue<'space'>
-        | Stitches.PropertyValue<'marginTop' & 'marginBottom'>
-        | number
+      value: SpaceValue<Stitches.PropertyValue<'marginTop' & 'marginBottom'>>
     ) => ({
       marginTop: value,
       marginBottom: value,

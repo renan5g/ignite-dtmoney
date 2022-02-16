@@ -1,16 +1,7 @@
-import { LogoIcon } from '@assets/icons';
-import { styled } from '@styles/stitches.config';
-
-export const Heading = styled('h1', {
-  fontSize: '$8',
-  color: '$heading',
-});
+import { globalStyles } from '@styles/global';
 
 export function App() {
-  return (
-    <>
-      <LogoIcon />
-      <Heading>DT Money</Heading>
-    </>
-  );
+  globalStyles();
+
+  return <h1>Hello</h1>;
 }
