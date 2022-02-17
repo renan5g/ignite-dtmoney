@@ -22,18 +22,26 @@ export const globalStyles = globalCss({
 
   body: {
     backgroundColor: '$background',
-    color: '$text_title',
-    fontFamily: '$body',
     WebkitFontSmoothing: 'antialiased',
     MozOsxFontSmoothing: 'grayscale',
   },
 
+  'body, input, textarea, button': {
+    fontFamily: '$body',
+    fontWeight: 400,
+  },
+
+  'h1, h2, h3, h4, h5, h6, strong': {
+    fontWeight: 600,
+  },
+
   button: {
+    border: 0,
     cursor: 'pointer',
   },
 
   '&[disibled]': {
-    opacity: '.6',
+    opacity: 0.6,
     cursor: 'not-allowed',
   },
 });
