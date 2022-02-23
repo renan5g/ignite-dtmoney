@@ -19,7 +19,7 @@ export function Summary() {
           <OutcomeIcon />
         </S.CardHeader>
 
-        <strong>R$500,00</strong>
+        <strong> - R$500,00</strong>
       </S.CardWrapper>
 
       <S.CardWrapper highlight>
