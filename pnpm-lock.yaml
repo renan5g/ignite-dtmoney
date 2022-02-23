@@ -6,6 +6,8 @@ specifiers:
   '@types/react': ^17.0.33
   '@types/react-dom': ^17.0.10
   '@vitejs/plugin-react': ^1.0.7
+  axios: ^0.26.0
+  miragejs: ^0.1.43
   react: ^17.0.2
   react-dom: ^17.0.2
   typescript: ^4.5.4
@@ -14,6 +16,7 @@ specifiers:
 
 dependencies:
   '@stitches/react': 1.2.6_react@17.0.2
+  axios: 0.26.0
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
 
@@ -22,6 +25,7 @@ devDependencies:
   '@types/react': 17.0.39
   '@types/react-dom': 17.0.11
   '@vitejs/plugin-react': 1.2.0
+  miragejs: 0.1.43
   typescript: 4.5.5
   vite: 2.8.3
   vite-tsconfig-paths: 3.4.0_vite@2.8.3
@@ -327,6 +331,10 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.11
     dev: true
 
+  /@miragejs/pretender-node-polyfill/0.1.2:
+    resolution: {integrity: sha512-M/BexG/p05C5lFfMunxo/QcgIJnMT2vDVCd00wNqK2ImZONIlEETZwWJu1QtLxtmYlSHlCFl3JNzp0tLe7OJ5g==}
+    dev: true
+
   /@rollup/pluginutils/4.1.2:
     resolution: {integrity: sha512-ROn4qvkxP9SyPeHaf7uQC/GPFY6L/OWy9+bd9AwcjOAWQwxRscoEyAUD8qCY5o5iL4jqQwoLk2kaTKJPb/HwzQ==}
     engines: {node: '>= 8.0.0'}
@@ -479,6 +487,14 @@ packages:
     dependencies:
       color-convert: 1.9.3
     dev: true
+
+  /axios/0.26.0:
+    resolution: {integrity: sha512-lKoGLMYtHvFrPVt3r+RBMp9nh34N0M8zEfCWqdWZx6phynIEhQqAdydpyBAAG211zlhX9Rgu08cOamy6XjE5Og==}
+    dependencies:
+      follow-redirects: 1.14.9
+    transitivePeerDependencies:
+      - debug
+    dev: false
 
   /browserslist/4.19.1:
     resolution: {integrity: sha512-u2tbbG5PdKRTUoctO3NBD8FQ5HdPh1ZXPHzp1rwaa5jTc+RV9/+RlWiAIKmjRPQF+xbGM9Kklj5bZQFa2s/38A==}
@@ -780,6 +796,20 @@ packages:
     resolution: {integrity: sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==}
     dev: true
 
+  /fake-xml-http-request/2.1.2:
+    resolution: {integrity: sha512-HaFMBi7r+oEC9iJNpc3bvcW7Z7iLmM26hPDmlb0mFwyANSsOQAtJxbdWsXITKOzZUyMYK0zYCv3h5yDj9TsiXg==}
+    dev: true
+
+  /follow-redirects/1.14.9:
+    resolution: {integrity: sha512-MQDfihBQYMcyy5dhRDJUHcw7lb2Pv/TuE6xP1vyraLukNDHKbDxDNaOE3NbCAdKQApno+GPRyo1YAp89yCjK4w==}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
+    dev: false
+
   /fsevents/2.3.2:
     resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
@@ -830,6 +860,10 @@ packages:
       resolve-from: 4.0.0
     dev: true
 
+  /inflected/2.1.0:
+    resolution: {integrity: sha512-hAEKNxvHf2Iq3H60oMBHkB4wl5jn3TPF3+fXek/sRwAB5gP9xWs4r7aweSF95f99HFoz69pnZTcu8f0SIHV18w==}
+    dev: true
+
   /is-arrayish/0.2.1:
     resolution: {integrity: sha1-d8mYQFJ6qOyxqLppe4BkWnqSap0=}
     dev: true
@@ -872,6 +906,98 @@ packages:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
     dev: true
 
+  /lodash.assign/4.2.0:
+    resolution: {integrity: sha1-DZnzzNem0mHRm9rrkkUAXShYCOc=}
+    dev: true
+
+  /lodash.camelcase/4.3.0:
+    resolution: {integrity: sha1-soqmKIorn8ZRA1x3EfZathkDMaY=}
+    dev: true
+
+  /lodash.clonedeep/4.5.0:
+    resolution: {integrity: sha1-4j8/nE+Pvd6HJSnBBxhXoIblzO8=}
+    dev: true
+
+  /lodash.compact/3.0.1:
+    resolution: {integrity: sha1-VAzjg3dFl1gHRx4WtKK6IeclbKU=}
+    dev: true
+
+  /lodash.find/4.6.0:
+    resolution: {integrity: sha1-ywcE1Hq3F4n/oN6Ll92Sb7iLE7E=}
+    dev: true
+
+  /lodash.flatten/4.4.0:
+    resolution: {integrity: sha1-8xwiIlqWMtK7+OSt2+8kCqdlph8=}
+    dev: true
+
+  /lodash.forin/4.4.0:
+    resolution: {integrity: sha1-XT8grlZAEfvog4H32YlJyclRlzE=}
+    dev: true
+
+  /lodash.get/4.4.2:
+    resolution: {integrity: sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=}
+    dev: true
+
+  /lodash.has/4.5.2:
+    resolution: {integrity: sha1-0Z9NwQlQWMzL4rDN9O4P5Ko3yGI=}
+    dev: true
+
+  /lodash.invokemap/4.6.0:
+    resolution: {integrity: sha1-F0jNpdiw74NpxOs+xUwh/rofLWI=}
+    dev: true
+
+  /lodash.isempty/4.4.0:
+    resolution: {integrity: sha1-b4bL7di+TsmHvpqvM8loTbGzHn4=}
+    dev: true
+
+  /lodash.isequal/4.5.0:
+    resolution: {integrity: sha1-QVxEePK8wwEgwizhDtMib30+GOA=}
+    dev: true
+
+  /lodash.isfunction/3.0.9:
+    resolution: {integrity: sha512-AirXNj15uRIMMPihnkInB4i3NHeb4iBtNg9WRWuK2o31S+ePwwNmDPaTL3o7dTJ+VXNZim7rFs4rxN4YU1oUJw==}
+    dev: true
+
+  /lodash.isinteger/4.0.4:
+    resolution: {integrity: sha1-YZwK89A/iwTDH1iChAt3sRzWg0M=}
+    dev: true
+
+  /lodash.isplainobject/4.0.6:
+    resolution: {integrity: sha1-fFJqUtibRcRcxpC4gWO+BJf1UMs=}
+    dev: true
+
+  /lodash.lowerfirst/4.3.1:
+    resolution: {integrity: sha1-3jx7EuAsZSSgBZwvbLfFxSZVoT0=}
+    dev: true
+
+  /lodash.map/4.6.0:
+    resolution: {integrity: sha1-dx7Hg540c9nEzeKLGTlMNWL09tM=}
+    dev: true
+
+  /lodash.mapvalues/4.6.0:
+    resolution: {integrity: sha1-G6+lAF3p3W9PJmaMMMo3IwzJaJw=}
+    dev: true
+
+  /lodash.pick/4.4.0:
+    resolution: {integrity: sha1-UvBWEP/53tQiYRRB7R/BI6AwAbM=}
+    dev: true
+
+  /lodash.snakecase/4.1.1:
+    resolution: {integrity: sha1-OdcUo1NXFHg3rv1ktdy7Fr7Nj40=}
+    dev: true
+
+  /lodash.uniq/4.5.0:
+    resolution: {integrity: sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=}
+    dev: true
+
+  /lodash.uniqby/4.7.0:
+    resolution: {integrity: sha1-2ZwHpmnp5tJOE2Lf4mbGdhavEwI=}
+    dev: true
+
+  /lodash.values/4.3.0:
+    resolution: {integrity: sha1-o6bCsOvsxcLLocF+bmIP6BtT00c=}
+    dev: true
+
   /loose-envify/1.4.0:
     resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
     hasBin: true
@@ -881,6 +1007,38 @@ packages:
 
   /minimist/1.2.5:
     resolution: {integrity: sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==}
+    dev: true
+
+  /miragejs/0.1.43:
+    resolution: {integrity: sha512-BhkyxssOZ2i4JqRjWpRnUQu9AFAKHyft8dJbqsg/N64+gCn2vw6vRteMpTKXllLjCPOA9Os8PhGRVXlXs4Ojhw==}
+    engines: {node: 6.* || 8.* || >= 10.*}
+    dependencies:
+      '@miragejs/pretender-node-polyfill': 0.1.2
+      inflected: 2.1.0
+      lodash.assign: 4.2.0
+      lodash.camelcase: 4.3.0
+      lodash.clonedeep: 4.5.0
+      lodash.compact: 3.0.1
+      lodash.find: 4.6.0
+      lodash.flatten: 4.4.0
+      lodash.forin: 4.4.0
+      lodash.get: 4.4.2
+      lodash.has: 4.5.2
+      lodash.invokemap: 4.6.0
+      lodash.isempty: 4.4.0
+      lodash.isequal: 4.5.0
+      lodash.isfunction: 3.0.9
+      lodash.isinteger: 4.0.4
+      lodash.isplainobject: 4.0.6
+      lodash.lowerfirst: 4.3.1
+      lodash.map: 4.6.0
+      lodash.mapvalues: 4.6.0
+      lodash.pick: 4.4.0
+      lodash.snakecase: 4.1.1
+      lodash.uniq: 4.5.0
+      lodash.uniqby: 4.7.0
+      lodash.values: 4.3.0
+      pretender: 3.4.7
     dev: true
 
   /ms/2.1.2:
@@ -946,6 +1104,13 @@ packages:
       source-map-js: 1.0.2
     dev: true
 
+  /pretender/3.4.7:
+    resolution: {integrity: sha512-jkPAvt1BfRi0RKamweJdEcnjkeu7Es8yix3bJ+KgBC5VpG/Ln4JE3hYN6vJym4qprm8Xo5adhWpm3HCoft1dOw==}
+    dependencies:
+      fake-xml-http-request: 2.1.2
+      route-recognizer: 0.3.4
+    dev: true
+
   /react-dom/17.0.2_react@17.0.2:
     resolution: {integrity: sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA==}
     peerDependencies:
@@ -999,6 +1164,10 @@ packages:
     hasBin: true
     optionalDependencies:
       fsevents: 2.3.2
+    dev: true
+
+  /route-recognizer/0.3.4:
+    resolution: {integrity: sha512-2+MhsfPhvauN1O8KaXpXAOfR/fwe8dnUXVM+xw7yt40lJRfPVQxV6yryZm0cgRvAj5fMF/mdRZbL2ptwbs5i2g==}
     dev: true
 
   /safe-buffer/5.1.2:
