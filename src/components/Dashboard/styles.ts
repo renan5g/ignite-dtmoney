@@ -1,7 +1,7 @@
-import { styled } from '@styles/stitches.config';
+import { styled } from '@styles/stitches';
 
 export const Container = styled('main', {
   maxWidth: '$maxWidth',
   margin: '0 auto',
-  padding: '$4 $3',
+  padding: '$6 $4',
 });

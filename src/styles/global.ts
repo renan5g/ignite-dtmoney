@@ -1,4 +1,4 @@
-import { globalCss } from './stitches.config';
+import { globalCss } from './stitches';
 
 export const globalStyles = globalCss({
   '*, *::before, *::after': {
@@ -11,11 +11,11 @@ export const globalStyles = globalCss({
     scrollBehavior: 'smooth',
     overflowX: 'hidden',
 
-    '@lg': {
+    '@laptop': {
       fontSize: '93.75%',
     },
 
-    '@md': {
+    '@tablet': {
       fontSize: '87.5%',
     },
   },
@@ -27,7 +27,7 @@ export const globalStyles = globalCss({
   },
 
   'body, input, textarea, button': {
-    fontFamily: '$body',
+    fontFamily: '$default',
     fontWeight: 400,
   },
 
@@ -41,7 +41,7 @@ export const globalStyles = globalCss({
   },
 
   '&[disibled]': {
-    opacity: 0.6,
+    opacity: '$intense',
     cursor: 'not-allowed',
   },
 });

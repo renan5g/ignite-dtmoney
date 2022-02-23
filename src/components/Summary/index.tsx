@@ -3,7 +3,7 @@ import * as S from './styles';
 
 export function Summary() {
   return (
-    <S.Container scroll={{ '@sm': 'true' }}>
+    <S.Container scroll={{ '@mobile': 'true' }}>
       <S.CardWrapper>
         <S.CardHeader>
           <p>Entradas</p>
@@ -19,7 +19,7 @@ export function Summary() {
           <OutcomeIcon />
         </S.CardHeader>
 
-        <strong> R$500,00</strong>
+        <strong>R$500,00</strong>
       </S.CardWrapper>
 
       <S.CardWrapper highlight>

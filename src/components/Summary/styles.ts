@@ -1,21 +1,21 @@
-import { styled } from '@styles/stitches.config';
+import { styled } from '@styles/stitches';
 
 export const Container = styled('section', {
   display: 'grid',
-  gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+  gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
 
-  gap: '$5',
-  mt: '-$8',
+  gap: '$8',
+  marginTop: '-$16',
 
-  '@md': {
-    gap: '$3',
-    mt: '-8rem',
+  '@mobile': {
+    gap: '$4',
+    marginTop: '-$40',
   },
 
   variants: {
     scroll: {
       true: {
-        gridTemplateColumns: 'repeat(3, minmax(250px, 1fr))',
+        gridTemplateColumns: 'repeat(3, minmax(300px, 1fr))',
         overflowX: 'scroll',
         '&::-webkit-scrollbar': {
           display: 'none',
@@ -26,15 +26,15 @@ export const Container = styled('section', {
 });
 
 export const CardWrapper = styled('article', {
-  padding: '$4 $5',
+  padding: '$6 $8',
   borderRadius: '$sm',
   bg: '$shape',
   color: '$text_title',
 
   '& strong': {
-    mt: '$3',
+    mt: '$4',
     display: 'block',
-    fontSize: '$8',
+    fontSize: '$4xl',
     fontWeight: 500,
     lineHeight: '3rem',
   },
