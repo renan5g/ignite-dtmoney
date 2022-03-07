@@ -7,7 +7,7 @@ export const Container = styled('section', {
   gap: '$8',
   marginTop: '-$16',
 
-  '@mobile': {
+  '@tablet': {
     gap: '$4',
     marginTop: '-$40',
   },
@@ -29,7 +29,7 @@ export const CardWrapper = styled('article', {
   padding: '$6 $8',
   borderRadius: '$sm',
   bg: '$shape',
-  color: '$text_title',
+  color: '$text-title',
 
   '& strong': {
     mt: '$4',
@@ -43,7 +43,7 @@ export const CardWrapper = styled('article', {
     highlight: {
       true: {
         bg: '$green',
-        color: '$text_white',
+        color: '$text-white',
       },
     },
   },

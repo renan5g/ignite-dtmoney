@@ -1,4 +1,6 @@
 import { LogoIcon } from '@assets/icons';
+import { NewTransactionModal } from '@components/NewTransactionModal';
+
 import * as S from './styles';
 
 export function Header() {
@@ -7,7 +9,7 @@ export function Header() {
       <S.Wrapper>
         <LogoIcon />
 
-        <S.AddButton>Nova Transação</S.AddButton>
+        <NewTransactionModal />
       </S.Wrapper>
     </S.Container>
   );

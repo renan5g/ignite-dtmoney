@@ -135,7 +135,7 @@ export const {
     tablet: '(max-width: 768px)',
     laptop: '(max-width: 1024px)',
     desktop: '(max-width: 1440px)',
-    motion: '(prefers-reduced-motion)',
+    motion: '(prefers-reduced-motion: no-preference)',
     hover: '(any-hover: hover)',
     dark: '(prefers-color-scheme: dark)',
     light: '(prefers-color-scheme: light)',

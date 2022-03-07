@@ -36,11 +36,13 @@ export const globalStyles = globalCss({
   },
 
   button: {
+    background: 'transparent',
+    outline: 0,
     border: 0,
     cursor: 'pointer',
   },
 
-  '&[disibled]': {
+  '[disabled]': {
     opacity: '$intense',
     cursor: 'not-allowed',
   },

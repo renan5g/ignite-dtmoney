@@ -15,7 +15,7 @@ export const Transactions = styled('table', {
 
   '& th': {
     textAlign: 'left',
-    color: '$text_body',
+    color: '$text-body',
     padding: '$4 $8',
     fontWeight: 400,
     lineHeight: '$base',
@@ -26,11 +26,11 @@ export const Td = styled('td', {
   bg: '$shape',
   padding: '$4 $8',
   border: 0,
-  color: '$text_body',
+  color: '$text-body',
 
   '&:first-child': {
     borderRadius: '$sm 0 0 $sm',
-    color: '$text_title',
+    color: '$text-title',
   },
 
   '&:last-child': {
@@ -39,11 +39,11 @@ export const Td = styled('td', {
 
   variants: {
     type: {
-      input: {
+      income: {
         color: '$green',
       },
 
-      output: {
+      outcome: {
         color: '$red',
       },
     },
