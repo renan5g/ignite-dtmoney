@@ -1,3 +1,4 @@
+import { transactions } from '@shared/data';
 import { createServer, Model } from 'miragejs';
 
 export function makeServer() {
@@ -6,31 +7,17 @@ export function makeServer() {
       transaction: Model,
     },
 
+    fixtures: {
+      transactions,
+    },
+
     seeds(server) {
-      server.db.loadData({
-        transactions: [
-          {
-            id: 1,
-            title: 'Freelance de website',
-            type: 'income',
-            amount: 2000,
-            category: 'Dev',
-            createdAt: new Date('2022-03-04 09:00:00'),
-          },
-          {
-            id: 2,
-            title: 'Aluguel',
-            type: 'outcome',
-            amount: 1100,
-            category: 'Casa',
-            createdAt: new Date('2022-02-04 09:00:00'),
-          },
-        ],
-      });
+      server.loadFixtures();
     },
 
     routes() {
       this.namespace = 'api';
+      this.timing = 750;
 
       this.get('/transactions');
       this.post('/transactions', (schema, request) => {

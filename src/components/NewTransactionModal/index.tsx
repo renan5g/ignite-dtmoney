@@ -6,18 +6,12 @@ import {
   ModalTitle,
   ModalTrigger,
 } from '@components/Modal';
-import { queryClient } from '@services/global/query-client';
-import { saveTransaction } from '@services/transactions/service';
+import { useTransactionMutation } from '@services/transactions';
 import { FormEvent, useState } from 'react';
-import { useMutation } from 'react-query';
 import * as S from './styles';
 
 export function NewTransactionModal() {
-  const createTransaction = useMutation(saveTransaction, {
-    onSuccess: () => {
-      queryClient.invalidateQueries('transactions');
-    },
-  });
+  const createTransaction = useTransactionMutation();
 
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [title, setTitle] = useState('');

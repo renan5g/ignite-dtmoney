@@ -1,3 +1,8 @@
 import { QueryKey } from 'react-query';
 
-export const createUseTransactionsKey = (): QueryKey => 'transactions';
+export const TRANSACTIONS_KEY = 'transactions';
+
+export const createUseTransactionsKey = (page = 1): QueryKey => [
+  TRANSACTIONS_KEY,
+  page,
+];
