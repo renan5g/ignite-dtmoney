@@ -20,12 +20,11 @@
     "paths": {
       "@assets/*": ["src/assets/*"],
       "@components/*": ["src/components/*"],
-      "@config/*": ["src/config/*"],
       "@hooks/*": ["src/hooks/*"],
-      "@lib/*": ["src/lib/*"],
       "@pages/*": ["src/pages/*"],
       "@styles/*": ["src/styles/*"],
       "@shared/*": ["src/shared/*"],
+      "@services/*": ["src/services/*"]
     },
   },
   "include": ["src"],

@@ -1,15 +1,20 @@
-export type TransactionModel = {
-  id: number;
-  title: string;
-  type: 'income' | 'outcome';
-  amount: number;
-  category: string;
-  createdAt: string;
-};
+export namespace Transaction {
+  export type Model = {
+    id: number;
+    title: string;
+    type: 'income' | 'outcome';
+    amount: number;
+    category: string;
+    createdAt: string;
+  };
 
-export type CreateTransactionInput = Omit<TransactionModel, 'id' | 'createdAt'>;
-export type CreateTransactionOutput = { transaction: TransactionModel };
+  export type GetAllResponse = {
+    transactions: Model[];
+  };
 
-export type TransactionsResponse = {
-  transactions: TransactionModel[];
-};
+  export type CreateInput = Omit<Model, 'id' | 'createdAt'>;
+
+  export type CreateResponse = {
+    transaction: Model;
+  };
+}

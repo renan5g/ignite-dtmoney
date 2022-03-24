@@ -1,10 +1,9 @@
-import { useTransactions } from '@hooks/useTransactions';
+import { useTransactions } from '@services/transactions';
 import { formatDate, formatPrice } from '@shared/utils';
-
 import * as S from './styles';
 
 export function TransactionsTable() {
-  const { transactions } = useTransactions();
+  const { data: transactions } = useTransactions();
 
   return (
     <S.Container>
@@ -19,7 +18,7 @@ export function TransactionsTable() {
         </thead>
 
         <tbody>
-          {transactions.map((transaction) => (
+          {transactions?.map((transaction) => (
             <tr key={transaction.id}>
               <S.Td>{transaction.title}</S.Td>
               <S.Td type={transaction.type}>

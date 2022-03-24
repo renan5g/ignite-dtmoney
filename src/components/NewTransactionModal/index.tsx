@@ -1,4 +1,3 @@
-import { FormEvent, useState } from 'react';
 import { CloseIcon, IncomeIcon, OutcomeIcon } from '@assets/icons';
 import {
   Modal,
@@ -7,12 +6,18 @@ import {
   ModalTitle,
   ModalTrigger,
 } from '@components/Modal';
-import { useTransactions } from '@hooks/useTransactions';
-
+import { queryClient } from '@services/global/query-client';
+import { saveTransaction } from '@services/transactions/service';
+import { FormEvent, useState } from 'react';
+import { useMutation } from 'react-query';
 import * as S from './styles';
 
 export function NewTransactionModal() {
-  const { createTransaction } = useTransactions();
+  const createTransaction = useMutation(saveTransaction, {
+    onSuccess: () => {
+      queryClient.invalidateQueries('transactions');
+    },
+  });
 
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [title, setTitle] = useState('');
@@ -23,7 +28,7 @@ export function NewTransactionModal() {
   async function handleCreateNewTransaction(e: FormEvent) {
     e.preventDefault();
 
-    await createTransaction({
+    await createTransaction.mutateAsync({
       title,
       category,
       amount,

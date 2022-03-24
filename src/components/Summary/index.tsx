@@ -1,32 +1,29 @@
 import { IncomeIcon, OutcomeIcon, TotalIcon } from '@assets/icons';
-import { useTransactions } from '@hooks/useTransactions';
+import { useTransactions } from '@services/transactions';
 import { formatPrice } from '@shared/utils';
-import { useMemo } from 'react';
 import * as S from './styles';
 
 export function Summary() {
-  const { transactions } = useTransactions();
+  const { data: transactions } = useTransactions();
 
-  const summary = useMemo(() => {
-    return transactions.reduce(
-      (acc, transaction) => {
-        if (transaction.type === 'income') {
-          acc.incomes += transaction.amount;
-          acc.total += transaction.amount;
-        } else {
-          acc.outcomes += transaction.amount;
-          acc.total -= transaction.amount;
-        }
-
-        return acc;
-      },
-      {
-        outcomes: 0,
-        incomes: 0,
-        total: 0,
+  const summary = transactions?.reduce(
+    (acc, transaction) => {
+      if (transaction.type === 'income') {
+        acc.incomes += transaction.amount;
+        acc.total += transaction.amount;
+      } else {
+        acc.outcomes += transaction.amount;
+        acc.total -= transaction.amount;
       }
-    );
-  }, [transactions]);
+
+      return acc;
+    },
+    {
+      outcomes: 0,
+      incomes: 0,
+      total: 0,
+    }
+  );
 
   return (
     <S.Container scroll={{ '@mobile': 'true' }}>
@@ -36,7 +33,7 @@ export function Summary() {
           <IncomeIcon />
         </S.CardHeader>
 
-        <strong>{formatPrice(summary.incomes)}</strong>
+        <strong>{formatPrice(summary?.incomes || 0)}</strong>
       </S.CardWrapper>
 
       <S.CardWrapper>
@@ -45,7 +42,7 @@ export function Summary() {
           <OutcomeIcon />
         </S.CardHeader>
 
-        <strong> -{formatPrice(summary.outcomes)}</strong>
+        <strong> -{formatPrice(summary?.outcomes || 0)}</strong>
       </S.CardWrapper>
 
       <S.CardWrapper highlight>
@@ -54,7 +51,7 @@ export function Summary() {
           <TotalIcon />
         </S.CardHeader>
 
-        <strong>{formatPrice(summary.total)}</strong>
+        <strong>{formatPrice(summary?.total || 0)}</strong>
       </S.CardWrapper>
     </S.Container>
   );
